@@ -1,7 +1,10 @@
-import {Component, Input, OnInit, ViewEncapsulation} from '@angular/core';
+import {Component, ElementRef, Input, OnInit, Renderer2, ViewChild, ViewEncapsulation} from '@angular/core';
 
 export interface Item {
-  name: string;
+  uri: string;
+  iconClass: string;
+  iconImage: string;
+  label: string;
 }
 
 @Component({
@@ -11,18 +14,25 @@ export interface Item {
   encapsulation: ViewEncapsulation.Emulated
 })
 export class LaunchpadComponent implements OnInit {
+  @ViewChild('toggleButton') toggleButton: ElementRef | undefined;
+  @ViewChild('menuExpanded') menuExpanded: ElementRef | undefined;
+  @Input() buttonClass = ''
   @Input() backgroundColor = '#2f2f33';
   @Input() items: Item[] = [];
-  isHidden = true;
+  isMenuOpen = false;
 
-  constructor() { }
+  constructor(private renderer: Renderer2) { }
 
   ngOnInit(): void {
-    console.log(this.items);
-  }
+    this.renderer.listen('window', 'click', (e: Event) => {
+      if (this.toggleButton?.nativeElement.contains(e.target)) {
+        this.isMenuOpen = !this.isMenuOpen;
+        return;
+      }
 
-  onExpandMenuClick() {
-    this.isHidden = !this.isHidden;
+      if (!this.menuExpanded?.nativeElement.contains(e.target)) {
+        this.isMenuOpen = false;
+      }
+    });
   }
-
 }

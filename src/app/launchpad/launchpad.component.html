@@ -1,45 +1,15 @@
-<button type="button" class="btn btn-link"
-  (click)="onExpandMenuClick()">
+<button #toggleButton
+        type="button" class="btn"
+        [ngClass]="buttonClass">
   <span class="fa fa-th"></span>
 </button>
-<div id="menu-expanded" class="app-menu"
+<div #menuExpanded id="menu-expanded" class="app-menu"
      [ngStyle]="{'background-color': backgroundColor}"
-     [ngClass]="{ 'hidden': isHidden }">
-  <a class="menu-item" href="#">
+     [ngClass]="{'hidden': !isMenuOpen}">
+  <a *ngFor="let i of [1, 2, 3, 4, 5, 6, 7, 8, 9]"
+     class="menu-item" href="#">
     <span class="fa fa-address-book"></span>
-    <p>Primo</p>
-  </a>
-  <a class="menu-item" href="#">
-    <span class="fa fa-address-book"></span>
-    <p>Primo</p>
-  </a>
-  <a class="menu-item" href="#">
-    <span class="fa fa-address-book"></span>
-    <p>Primo</p>
-  </a>
-  <a class="menu-item" href="#">
-    <span class="fa fa-address-book"></span>
-    <p>Primo</p>
-  </a>
-  <a class="menu-item" href="#">
-    <span class="fa fa-address-book"></span>
-    <p>Primo</p>
-  </a>
-  <a class="menu-item" href="#">
-    <span class="fa fa-address-book"></span>
-    <p>Primo</p>
-  </a>
-  <a class="menu-item" href="#">
-    <span class="fa fa-address-book"></span>
-    <p>Primo</p>
-  </a>
-  <a class="menu-item" href="#">
-    <span class="fa fa-address-book"></span>
-    <p>Primo</p>
-  </a>
-  <a class="menu-item" href="#">
-    <span class="fa fa-address-book"></span>
-    <p>Primo</p>
+    <p>Primo {{i}}</p>
   </a>
 </div>
 
