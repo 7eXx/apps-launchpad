@@ -1,18 +1,21 @@
-import { NgModule } from '@angular/core';
+import { Injector, NgModule} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import { LaunchpadComponent } from './launchpad/launchpad.component';
+import {createCustomElement} from "@angular/elements";
 
 @NgModule({
   declarations: [
-    AppComponent
+    LaunchpadComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+  ]
 })
-export class AppModule { }
+export class AppModule {
+
+  constructor(private injector: Injector) {
+    const webComponent = createCustomElement(LaunchpadComponent, {injector: this.injector});
+    customElements.define('fv-launchpad', webComponent);
+  }
+}

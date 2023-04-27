@@ -1,0 +1,11 @@
+<div>
+  <button type="button" class="btn btn-link"
+    (click)="onExpandMenuClick()">
+    <span class="fa fa-th"></span>
+  </button>
+  <div id="menu-expanded" class="app-menu"
+       [ngStyle]="{'background-color': backgroundColor}"
+       [ngClass]="{ 'hidden': isHidden }">
+
+  </div>
+</div>
