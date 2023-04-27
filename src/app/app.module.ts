@@ -1,4 +1,4 @@
-import { Injector, NgModule} from '@angular/core';
+import {ApplicationRef, DoBootstrap, Injector, NgModule} from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { LaunchpadComponent } from './launchpad/launchpad.component';
@@ -12,10 +12,13 @@ import {createCustomElement} from "@angular/elements";
     BrowserModule,
   ]
 })
-export class AppModule {
+export class AppModule implements DoBootstrap {
 
   constructor(private injector: Injector) {
     const webComponent = createCustomElement(LaunchpadComponent, {injector: this.injector});
     customElements.define('fv-launchpad', webComponent);
+  }
+
+  ngDoBootstrap(appRef: ApplicationRef) {
   }
 }
