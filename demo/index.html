@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Demo for Apps Launchpad</title>
+    <base href="/">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+  </head>
+  <body>
+    <fv-launchpad id="apps-launchpad"
+      button-class="btn-dark"
+      btn-icon-class="bi bi-grid-3x3"
+      background-color="#2f2f33"></fv-launchpad>
+    <script type="text/javascript" src="dist/apps-launchpad.js"></script>
+    <script>
+      const items = [{
+        uri: 'https://app.telegestione.frigoveneta.it',
+        iconClass: '',
+        iconImage: 'assets/WebGest Remote.svg',
+        label: 'WebGest'
+      },{
+        uri: 'https://db.telegestione.frigoveneta.it',
+        iconClass: '',
+        iconImage: 'assets/Allarmi.svg',
+        label: 'Allarmi'
+      }, {
+        uri: 'https://db.telegestione.frigoveneta.it/fgas',
+        iconClass: '',
+        iconImage: 'assets/F-Gas.svg',
+        label: 'F-Gas'
+      }, {
+        uri: 'https://app.telegestione.frigoveneta.it',
+        iconClass: '',
+        iconImage: 'assets/WebGest Remote.svg',
+        label: 'Manutenzioni'
+      },{
+        uri: 'https://db.telegestione.frigoveneta.it',
+        iconClass: '',
+        iconImage: 'assets/Allarmi.svg',
+        label: 'Messaggi'
+      }, {
+        uri: 'https://db.telegestione.frigoveneta.it/fgas',
+        iconClass: '',
+        iconImage: 'assets/F-Gas.svg',
+        label: 'Centralino'
+      },{
+        uri: 'https://app.telegestione.frigoveneta.it',
+        iconClass: '',
+        iconImage: 'assets/WebGest Remote.svg',
+        label: 'WebGest'
+      },{
+        uri: 'https://db.telegestione.frigoveneta.it',
+        iconClass: '',
+        iconImage: 'assets/Allarmi.svg',
+        label: 'Allarmi'
+      }, {
+        uri: 'https://db.telegestione.frigoveneta.it/fgas',
+        iconClass: '',
+        iconImage: 'assets/F-Gas.svg',
+        label: 'F-Gas'
+      }, {
+        uri: 'https://app.telegestione.frigoveneta.it',
+        iconClass: '',
+        iconImage: 'assets/WebGest Remote.svg',
+        label: 'Manutenzioni'
+      },{
+        uri: 'https://db.telegestione.frigoveneta.it',
+        iconClass: '',
+        iconImage: 'assets/Allarmi.svg',
+        label: 'Messaggi'
+      }, {
+        uri: 'https://db.telegestione.frigoveneta.it/fgas',
+        iconClass: '',
+        iconImage: 'assets/F-Gas.svg',
+        label: 'Centralino'
+      }];
+      let launchpad = document.querySelector('#apps-launchpad');
+      launchpad.items = items;
+    </script>
+  </body>
+</html>

@@ -8,7 +8,6 @@ import {
   ViewChild,
   ViewEncapsulation
 } from '@angular/core';
-import * as events from "events";
 
 export interface Item {
   uri: string;
@@ -21,7 +20,7 @@ export interface Item {
   selector: 'app-launchpad',
   templateUrl: './launchpad.component.html',
   styleUrls: [ './launchpad.component.scss' ],
-  encapsulation: ViewEncapsulation.ShadowDom
+  encapsulation: ViewEncapsulation.Emulated
 })
 export class LaunchpadComponent implements OnInit, AfterViewInit {
   @ViewChild('container') appsContainer: ElementRef | undefined;
