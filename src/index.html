@@ -28,11 +28,24 @@
           <li class="nav-item">
             <a class="nav-link disabled">Fourth</a>
           </li>
+           <li class="nav-item">
+            <a class="nav-link disabled">Fifth</a>
+          </li>
+          <li class="nav-item">
+            <fv-launchpad id="apps-launchpad"
+              button-class="btn-outline-light"
+              btn-icon-class="fa fa-th"
+              background-color="#2f2f33"></fv-launchpad>
+          </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
           <fv-launchpad
             button-class="btn-outline-light"
+            btn-icon-class="fa fa-th"
             background-color="#2f2f33"></fv-launchpad>
+          <button type="button" class="ml-2 btn btn-secondary">
+            Prova
+          </button>
         </form>
       </div>
     </nav>
@@ -69,7 +82,7 @@
       iconImage: 'assets/F-Gas.svg',
       label: 'Centralino'
     }];
-    let launchpad = document.querySelector('fv-launchpad');
+    let launchpad = document.querySelector('#apps-launchpad');
     launchpad.items = items;
   </script>
 </html>
