@@ -39,9 +39,35 @@
   </body>
   <script>
     const items = [{
-        name: 'primo'
+      uri: 'https://app.telegestione.frigoveneta.it',
+      iconClass: '',
+      iconImage: 'assets/WebGest Remote.svg',
+      label: 'WebGest'
     },{
-        name: 'secondo'
+      uri: 'https://db.telegestione.frigoveneta.it',
+      iconClass: '',
+      iconImage: 'assets/Allarmi.svg',
+      label: 'Allarmi'
+    }, {
+      uri: 'https://db.telegestione.frigoveneta.it/fgas',
+      iconClass: '',
+      iconImage: 'assets/F-Gas.svg',
+      label: 'F-Gas'
+    }, {
+      uri: 'https://app.telegestione.frigoveneta.it',
+      iconClass: '',
+      iconImage: 'assets/WebGest Remote.svg',
+      label: 'Manutenzioni'
+    },{
+      uri: 'https://db.telegestione.frigoveneta.it',
+      iconClass: '',
+      iconImage: 'assets/Allarmi.svg',
+      label: 'Messaggi'
+    }, {
+      uri: 'https://db.telegestione.frigoveneta.it/fgas',
+      iconClass: '',
+      iconImage: 'assets/F-Gas.svg',
+      label: 'Centralino'
     }];
     let launchpad = document.querySelector('fv-launchpad');
     launchpad.items = items;

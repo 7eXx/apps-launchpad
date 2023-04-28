@@ -2,7 +2,7 @@ import {Component, ElementRef, Input, OnInit, Renderer2, ViewChild, ViewEncapsul
 
 export interface Item {
   uri: string;
-  iconClass: string;
+  iconClass?: string;
   iconImage: string;
   label: string;
 }
@@ -11,7 +11,7 @@ export interface Item {
   selector: 'app-launchpad',
   templateUrl: './launchpad.component.html',
   styleUrls: [ './launchpad.component.scss' ],
-  encapsulation: ViewEncapsulation.Emulated
+  encapsulation: ViewEncapsulation.ShadowDom
 })
 export class LaunchpadComponent implements OnInit {
   @ViewChild('toggleButton') toggleButton: ElementRef | undefined;
@@ -19,12 +19,12 @@ export class LaunchpadComponent implements OnInit {
   @Input() buttonClass = ''
   @Input() backgroundColor = '#2f2f33';
   @Input() items: Item[] = [];
-  isMenuOpen = false;
+  isMenuOpen = true;
 
   constructor(private renderer: Renderer2) { }
 
   ngOnInit(): void {
-    this.renderer.listen('window', 'click', (e: Event) => {
+    this.renderer.listen('document', 'click', (e: Event) => {
       if (this.toggleButton?.nativeElement.contains(e.target)) {
         this.isMenuOpen = !this.isMenuOpen;
         return;

@@ -1,3 +1,13 @@
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+img {
+  vertical-align: middle;
+  border-style: none;
+}
+
 .app-menu {
   background-color: #2f2f33;
   color: #FFFFFF;
@@ -34,6 +44,12 @@
 
 .menu-item:hover {
   background-color: #aaaaaa;
+}
+
+.text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .hidden {
