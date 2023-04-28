@@ -1,6 +1,10 @@
 @import "node_modules/bootstrap/dist/css/bootstrap.min";
 @import "node_modules/font-awesome/scss/font-awesome";
 
+$border-radius: 10px;
+$primary-background-color: #2f2f2f;
+$secondary-background-color: #aaaaaa;
+
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -15,7 +19,7 @@ img {
 }
 
 .app-menu {
-  background-color: #2f2f33;
+  background-color: #2f2f2f;
   color: #FFFFFF;
   border: 1px solid #1b1e21;
   border-radius: 10px;
@@ -24,7 +28,7 @@ img {
   top: 0;
   max-height: calc(-65px + 100vh);
   height: 325px;
-  width: 310px;
+  width: 320px;
   margin-right: 0;
   margin-top: 60px;
   overflow-x: hidden;
@@ -36,7 +40,7 @@ img {
 }
 
 .menu-item {
-  border-radius: 10px;
+  border-radius: $border-radius;
   color: #fff;
   display: inline-block;
   text-align: center;
@@ -61,4 +65,20 @@ img {
 
 .hidden {
   display: none !important;
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  border-radius: $border-radius;
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: $secondary-background-color;
+  border-radius: 20px;
+  border: 3px solid $primary-background-color;
 }
