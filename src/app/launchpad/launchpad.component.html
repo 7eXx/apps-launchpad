@@ -1,8 +1,7 @@
 <div #container class="app-container">
   <button #toggleButton
           type="button" class="btn"
-          [ngClass]="buttonClass"
-          (click)="onClick()">
+          [ngClass]="buttonClass">
     <span [ngClass]="[btnIconClass]"></span>
   </button>
   <div #menuExpanded id="menu-expanded" class="app-menu"

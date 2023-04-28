@@ -8,6 +8,7 @@ import {
   ViewChild,
   ViewEncapsulation
 } from '@angular/core';
+import * as events from "events";
 
 export interface Item {
   uri: string;
@@ -22,7 +23,7 @@ export interface Item {
   styleUrls: [ './launchpad.component.scss' ],
   encapsulation: ViewEncapsulation.ShadowDom
 })
-export class LaunchpadComponent implements OnInit {
+export class LaunchpadComponent implements OnInit, AfterViewInit {
   @ViewChild('container') appsContainer: ElementRef | undefined;
   @ViewChild('toggleButton') toggleButton: ElementRef | undefined;
   @ViewChild('menuExpanded') menuExpanded: ElementRef | undefined;
@@ -35,6 +36,20 @@ export class LaunchpadComponent implements OnInit {
   constructor(private renderer: Renderer2) { }
 
   ngOnInit(): void {
+    this.renderer.listen('window', 'click', (e: Event) => {
+      if (e.composedPath().includes(this.toggleButton?.nativeElement)) {
+        this.toggleOpenMenu();
+        return;
+      }
+
+      if (!e.composedPath().includes(this.menuExpanded?.nativeElement)) {
+        this.closeMenu();
+      }
+    });
+  }
+
+  ngAfterViewInit() {
+    this.repositionMenu();
   }
 
   @HostListener('window:resize', ['$event'])
@@ -42,9 +57,12 @@ export class LaunchpadComponent implements OnInit {
     this.repositionMenu();
   }
 
-  onClick() {
+  private toggleOpenMenu() {
     this.isMenuOpen = !this.isMenuOpen;
-    this.repositionMenu();
+  }
+
+  private closeMenu() {
+    this.isMenuOpen = false;
   }
 
   // reposition menu based if component is before or after middle of the screen
