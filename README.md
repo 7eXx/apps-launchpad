@@ -16,9 +16,19 @@ you can project your custom button using
   </button>
 </apps-launchpad>
 ```
-
-so you can use whatever style you want for the toggle button.
+so you can use whatever style you want for the toggle button.  
+Then retrieve the html element end edit the items attribute to pass a list of links and titles.
+```
+const items = [{
+  uri: 'https://app.telegestione.frigoveneta.it',
+  iconClass: '',
+  iconImage: 'assets/WebGest Remote.svg',
+  label: 'WebGest'
+}, { ... }];
+let launchpad = document.querySelector('#apps-launchpad');
+launchpad.items = items;
+```
 
 ## Screenshot
-![record-1](./screenshot/record-1.gif)
+![record-1](https://github.com/7eXx/apps-launchpad/blob/master/screenshot/record-1.gif)
 
