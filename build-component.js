@@ -36,5 +36,16 @@ updateReadme = async () => {
   }
 }
 
+updateVersion = async () => {
+  const pjson = require('./package.json');
+  const publicPackageJson = 'public/package.json';
+
+  const content = await fsExtra.readJson(publicPackageJson);
+  content.version = pjson.version;
+
+  await fsExtra.writeJson(publicPackageJson, content, { spaces: 2, replacer: ' ' });
+};
+
 build();
+updateVersion();
 updateReadme();
