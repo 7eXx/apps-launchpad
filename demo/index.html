@@ -12,10 +12,13 @@
   </head>
   <body>
     <fv-launchpad id="apps-launchpad"
-      button-class="btn-dark"
-      btn-icon-class="bi bi-grid-3x3"
-      background-color="#2f2f33"></fv-launchpad>
-    <script type="text/javascript" src="dist/apps-launchpad.js"></script>
+      background-color="#2f2f33">
+      <button slot="toggle-button"
+            type="button" class="btn btn-primary">
+        <span class="fa fa-th"></span>
+      </button>
+    </fv-launchpad>
+    <script type="text/javascript" src="public/apps-launchpad.js"></script>
     <script>
       const items = [{
         uri: 'https://app.telegestione.frigoveneta.it',

@@ -20,7 +20,7 @@ export interface Item {
   selector: 'app-launchpad',
   templateUrl: './launchpad.component.html',
   styleUrls: [ './launchpad.component.scss' ],
-  encapsulation: ViewEncapsulation.Emulated
+  encapsulation: ViewEncapsulation.ShadowDom
 })
 export class LaunchpadComponent implements OnInit, AfterViewInit {
   @ViewChild('container') appsContainer: ElementRef | undefined;

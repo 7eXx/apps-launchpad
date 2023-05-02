@@ -35,10 +35,12 @@
           </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
-          <fv-launchpad id="apps-launchpad"
-            button-class="btn-outline-light"
-            btn-icon-class="fa fa-th"
-            background-color="#2f2f33"></fv-launchpad>
+          <fv-launchpad id="apps-launchpad" background-color="#2f2f33">
+            <button slot="toggle-button"
+                  type="button" class="btn btn-outline-light">
+              <span class="fa fa-th"></span>
+            </button>
+          </fv-launchpad>
           <button type="button" class="ml-2 btn btn-secondary">
             Another button
           </button>
