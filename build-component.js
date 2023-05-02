@@ -29,4 +29,12 @@ build = async () => {
   await concat(files, 'public/apps-launchpad.js');
 }
 
+updateReadme = async () => {
+  const readmePath = './README.md';
+  if (fs.existsSync(readmePath)) {
+    await fsExtra.copy(readmePath, 'public/README.md');
+  }
+}
+
 build();
+updateReadme();
