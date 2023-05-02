@@ -9,7 +9,7 @@
     "build:component": "ng build --output-hashing none && node build-component.js",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "publish": "cd public && npm publish "
+    "publish": "cd public && npm publish --access public"
   },
   "private": true,
   "dependencies": {
