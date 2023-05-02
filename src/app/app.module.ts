@@ -16,7 +16,7 @@ export class AppModule implements DoBootstrap {
 
   constructor(private injector: Injector) {
     const webComponent = createCustomElement(LaunchpadComponent, {injector: this.injector});
-    customElements.define('fv-launchpad', webComponent);
+    customElements.define('apps-launchpad', webComponent);
   }
 
   ngDoBootstrap(appRef: ApplicationRef) {

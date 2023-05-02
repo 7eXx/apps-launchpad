@@ -1,5 +1,22 @@
+$border-radius: 10px;
+$primary-background-color: #2f2f2f;
+$secondary-background-color: #aaaaaa;
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+img {
+  vertical-align: middle;
+  border-style: none;
+}
+
+.app-container {
+  position: relative;
+}
+
 .app-menu {
-  background-color: #2f2f33;
+  background-color: #2f2f2f;
   color: #FFFFFF;
   border: 1px solid #1b1e21;
   border-radius: 10px;
@@ -8,9 +25,9 @@
   top: 0;
   max-height: calc(-65px + 100vh);
   height: 325px;
-  width: 310px;
-  margin-right: 10px;
-  margin-top: 60px;
+  width: 320px;
+  margin-right: 0;
+  margin-top: 50px;
   overflow-x: hidden;
   overflow-y: auto;
   padding: 10px;
@@ -20,7 +37,7 @@
 }
 
 .menu-item {
-  border-radius: 10px;
+  border-radius: $border-radius;
   color: #fff;
   display: inline-block;
   text-align: center;
@@ -34,8 +51,31 @@
 
 .menu-item:hover {
   background-color: #aaaaaa;
+  color: #FFFFFF;
+}
+
+.text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .hidden {
   display: none !important;
+}
+
+/* Works on Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  border-radius: $border-radius;
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: $secondary-background-color;
+  border-radius: 20px;
+  border: 3px solid $primary-background-color;
 }

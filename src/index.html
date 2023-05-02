@@ -7,6 +7,8 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
   </head>
   <body>
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
@@ -28,22 +30,87 @@
           <li class="nav-item">
             <a class="nav-link disabled">Fourth</a>
           </li>
+           <li class="nav-item">
+            <a class="nav-link disabled">Fifth</a>
+          </li>
         </ul>
         <form class="form-inline my-2 my-lg-0">
-          <fv-launchpad
-            button-class="btn-outline-light"
-            background-color="#2f2f33"></fv-launchpad>
+          <apps-launchpad id="apps-launchpad" background-color="#2f2f33">
+            <button slot="toggle-button"
+                  type="button" class="btn btn-outline-light">
+              <span class="fa fa-th"></span>
+            </button>
+          </apps-launchpad>
+          <button type="button" class="ml-2 btn btn-secondary">
+            Another button
+          </button>
         </form>
       </div>
     </nav>
   </body>
   <script>
     const items = [{
-        name: 'primo'
+      uri: 'https://app.telegestione.frigoveneta.it',
+      iconClass: '',
+      iconImage: 'assets/WebGest Remote.svg',
+      label: 'WebGest'
     },{
-        name: 'secondo'
+      uri: 'https://db.telegestione.frigoveneta.it',
+      iconClass: '',
+      iconImage: 'assets/Allarmi.svg',
+      label: 'Allarmi'
+    }, {
+      uri: 'https://db.telegestione.frigoveneta.it/fgas',
+      iconClass: '',
+      iconImage: 'assets/F-Gas.svg',
+      label: 'F-Gas'
+    }, {
+      uri: 'https://app.telegestione.frigoveneta.it',
+      iconClass: '',
+      iconImage: 'assets/WebGest Remote.svg',
+      label: 'Manutenzioni'
+    },{
+      uri: 'https://db.telegestione.frigoveneta.it',
+      iconClass: '',
+      iconImage: 'assets/Allarmi.svg',
+      label: 'Messaggi'
+    }, {
+      uri: 'https://db.telegestione.frigoveneta.it/fgas',
+      iconClass: '',
+      iconImage: 'assets/F-Gas.svg',
+      label: 'Centralino'
+    },{
+      uri: 'https://app.telegestione.frigoveneta.it',
+      iconClass: '',
+      iconImage: 'assets/WebGest Remote.svg',
+      label: 'WebGest'
+    },{
+      uri: 'https://db.telegestione.frigoveneta.it',
+      iconClass: '',
+      iconImage: 'assets/Allarmi.svg',
+      label: 'Allarmi'
+    }, {
+      uri: 'https://db.telegestione.frigoveneta.it/fgas',
+      iconClass: '',
+      iconImage: 'assets/F-Gas.svg',
+      label: 'F-Gas'
+    }, {
+      uri: 'https://app.telegestione.frigoveneta.it',
+      iconClass: '',
+      iconImage: 'assets/WebGest Remote.svg',
+      label: 'Manutenzioni'
+    },{
+      uri: 'https://db.telegestione.frigoveneta.it',
+      iconClass: '',
+      iconImage: 'assets/Allarmi.svg',
+      label: 'Messaggi'
+    }, {
+      uri: 'https://db.telegestione.frigoveneta.it/fgas',
+      iconClass: '',
+      iconImage: 'assets/F-Gas.svg',
+      label: 'Centralino'
     }];
-    let launchpad = document.querySelector('fv-launchpad');
+    let launchpad = document.querySelector('#apps-launchpad');
     launchpad.items = items;
   </script>
 </html>

@@ -1,0 +1,15 @@
+{
+  "name": "apps-launchpad",
+  "version": "0.2.1",
+  "description": "A simple apps launchpad",
+  "main": "apps-launchpad.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:7eXx/apps-launchpad.git"
+  },
+  "author": "Texx",
+  "license": "MIT"
+}
