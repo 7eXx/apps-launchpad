@@ -20,13 +20,33 @@ so you can use whatever style you want for the toggle button.
 Then retrieve the html element end edit the items attribute to pass a list of links and titles.
 ```
 const items = [{
-  uri: 'https://app.telegestione.frigoveneta.it',
+  uri: 'https://google.com',
   iconClass: '',
-  iconImage: 'assets/WebGest Remote.svg',
-  label: 'WebGest'
+  iconImage: 'assets/google.svg',
+  label: 'Google'
 }, { ... }];
 let launchpad = document.querySelector('#apps-launchpad');
 launchpad.items = items;
+```
+
+## Build
+To build the project use the following command:
+```
+$ npm run build 
+```
+To create unique js script file use:
+```
+$ npm run build:component
+```
+To publish the component use:
+```
+$ npm run publish
+```
+
+## Demo
+Ensure you have installed ***lite-server***:
+```
+$ npm i -g lite-server
 ```
 
 ## Screenshot
