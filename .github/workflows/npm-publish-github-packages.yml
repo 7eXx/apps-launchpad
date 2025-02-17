@@ -15,8 +15,10 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - run: npm ci
-      - run: npm run test:ci
+      - name: installing dependencies
+        run: npm ci
+      - name: running tests
+        run: npm run test:ci
 
   publish-gpr:
     needs: build
@@ -30,7 +32,11 @@ jobs:
         with:
           node-version: 20
           registry-url: https://registry.npmjs.org/
-      - run: npm ci
-      - run: npm run publish
+      - name: installing dependencies
+        run: npm ci
+      - name: building package for publishing
+        run: npm run build:component
+      - name: publishing package
+        run: npm run publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
