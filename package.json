@@ -9,6 +9,7 @@
     "build:component": "ng build --output-hashing none && node build-component.js",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
+    "test:ci": "ng test --browsers=ChromeHeadlessNoSandbox --no-watch --code-coverage",
     "publish": "cd public && npm publish --access public"
   },
   "private": true,
