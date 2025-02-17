@@ -40,11 +40,29 @@ updateVersion = async () => {
   const pjson = require('./package.json');
   const publicPackageJson = 'public/package.json';
 
-  const content = await fsExtra.readJson(publicPackageJson);
+  const content = getPackageJson();
   content.version = pjson.version;
 
   await fsExtra.writeJson(publicPackageJson, content, { spaces: 2, replacer: ' ' });
 };
+
+getPackageJson = () => {
+  return {
+    "name": "apps-launchpad",
+    "version": "0",
+    "description": "A simple apps launchpad",
+    "main": "apps-launchpad.js",
+    "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+ssh://git@github.com/7eXx/apps-launchpad.git"
+    },
+    "author": "Texx",
+    "license": "MIT"
+  };
+}
 
 build();
 updateVersion();
